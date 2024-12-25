@@ -1,15 +1,17 @@
+import java.time.LocalDate;
+import java.util.Objects;
 public class MyStudent {
     private String firstName;
     private String lastName;
     private String studentId;
-    private String dateOfBirth;
+    private LocalDate dateOfBirth;
     private String faculty;
 
     // Constructor
-    public MyStudent(String firstName, String lastName, String studentId, String dateOfBirth, String faculty) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.studentId = studentId;
+    public MyStudent(String firstName, String lastName, String studentId, LocalDate dateOfBirth, String faculty) {
+        this.firstName = Objects.requireNonNull(firstName, "First name cannot be null");
+        this.lastName = Objects.requireNonNull(lastName, "Last name cannot be null");
+        this.studentId = Objects.requireNonNull(studentId, "Student ID cannot be null");
         this.dateOfBirth = dateOfBirth;
         this.faculty = faculty;
     }
@@ -27,7 +29,7 @@ public class MyStudent {
         return studentId;
     }
 
-    public String getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -48,7 +50,7 @@ public class MyStudent {
         this.studentId = studentId;
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -63,7 +65,7 @@ public class MyStudent {
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", studentId='" + studentId + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
                 ", faculty='" + faculty + '\'' +
                 '}';
     }
