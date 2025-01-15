@@ -8,7 +8,7 @@ public class StudentLoan {
     private Date loanStartDate;
     private int numberOfYears;
 
-    public StudentLoan(String loanID, double loanAmount, String bank, Date loanStartDate, int numberOfYears) {
+    public StudentLoan(int loanID, double loanAmount, String bank, Date loanStartDate, int numberOfYears) {
         this.studentId = studentId;
         this.loanAmount = loanAmount;
         this.bank = bank;
@@ -47,11 +47,11 @@ public class StudentLoan {
 
     // Getter and Setter for loanStartDate
     public Date getLoanStartDate() {
-        return loanStartDate;
+        return loanStartDate != null ? (Date) loanStartDate.clone() : null;
     }
 
     public void setLoanStartDate(Date loanStartDate) {
-        this.loanStartDate = loanStartDate;
+        this.loanStartDate = loanStartDate != null ? (Date) loanStartDate.clone() : null;
     }
 
     // Getter and Setter for numberOfYears
