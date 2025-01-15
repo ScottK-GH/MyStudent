@@ -48,10 +48,10 @@ public class StudentScholarship {
     }
 
     public String[] getScholarshipCriteria() {
-        return scholarshipCriteria;
+        return scholarshipCriteria != null ? scholarshipCriteria.clone() : null;
     }
 
     public void setScholarshipCriteria(String[] scholarshipCriteria) {
-        this.scholarshipCriteria = scholarshipCriteria;
+        this.scholarshipCriteria = scholarshipCriteria != null ? scholarshipCriteria.clone() : null;
     }
 }
